@@ -3,10 +3,13 @@ package com.example.kieritserver.entities.user;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public class UserRepository implements IUserRepository{
-    public User createUser(User user) {
+    @Override
+    public User createUser(User user) throws Exception {
         return null;
     }
-    public User getUserByEmail(String email) {
+
+    @Override
+    public User getUserByEmail(String email) throws Exception {
         return null;
     }
 }

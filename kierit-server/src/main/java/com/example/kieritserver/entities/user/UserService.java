@@ -10,12 +10,12 @@ public class UserService implements IUserService{
     }
 
     @Override
-    public LoginUserRes SignIn(LoginUserReq req) {
+    public LoginUserRes SignIn(LoginUserReq req) throws Exception {
         return null;
     }
 
     @Override
-    public CreateUserRes SingUp(CreateUserReq req) {
+    public CreateUserRes SingUp(CreateUserReq req) throws Exception {
         return null;
     }
 }

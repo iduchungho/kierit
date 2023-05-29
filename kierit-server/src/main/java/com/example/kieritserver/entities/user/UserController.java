@@ -2,10 +2,7 @@ package com.example.kieritserver.entities.user;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,12 +18,17 @@ public class UserController implements IUserController{
     }
 
     @Override
-    public ResponseEntity<User> Register(@RequestBody CreateUserReq request) {
-        return null;
+    @PostMapping("/signup")
+    public ResponseEntity<CreateUserRes> Register(@RequestBody CreateUserReq request) {
+
+        return ResponseEntity.status(HttpStatus.OK).body(
+                new CreateUserRes("1", request.username, request.email)
+        );
     }
 
     @Override
-    public ResponseEntity<User> Login(@RequestBody LoginUserReq request) {
+    @PostMapping("/login")
+    public ResponseEntity<LoginUserRes> Login(@RequestBody LoginUserReq request) {
         return null;
     }
 }

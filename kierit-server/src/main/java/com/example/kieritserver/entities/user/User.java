@@ -46,19 +46,10 @@ class CreateUserRes {
     public String id;
     public String username;
     public String email;
-}
 
-interface IUserRepository {
-    User createUser(User user);
-    User getUserByEmail(String email);
-}
-
-interface IUserService {
-    LoginUserRes SignIn(LoginUserReq req);
-    CreateUserRes SingUp(CreateUserReq req);
-}
-
-interface IUserController{
-    ResponseEntity<User> Register(@RequestBody CreateUserReq request);
-    ResponseEntity<User> Login(@RequestBody LoginUserReq request);
+    public CreateUserRes(String id, String username, String email) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+    }
 }
